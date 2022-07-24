@@ -1,9 +1,8 @@
 import axios from 'axios'
-import styles from '../styles/Home.module.scss'
 import { useState, useEffect } from 'react'
-import BeerList from './BeerList'
-import Header from './Header'
-import Footer from './Footer'
+import BeerList from '../components/BeerList'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Home() {
 
