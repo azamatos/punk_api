@@ -1,8 +1,15 @@
-import styles from '../styles/Footer.module.scss'
+import styles from '../../styles/Footer.module.scss'
 
-const Footer = ({ choosePage }) => {
+const Footer = ({ choosePage, beers }) => {
 
   const pageList = Array(13).fill(0)
+
+  if (beers.length === 0)
+    return (
+      <div className={styles.notFound}>
+        <h1>NOT FOUND</h1>
+      </div>
+    )
 
   return (
     <div className={styles.cover}>

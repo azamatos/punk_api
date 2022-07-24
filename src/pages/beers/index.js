@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../../styles/BeerCard.module.scss"
+import styles from "../../../styles/BeerCard.module.scss"
+import { useRouter } from "next/router";
+export default function BeerId({ props }) {
 
-export default function BeerId({ chosenBeer }) {
+  const router = useRouter()
+  const {
+    query: { data },
+  } = router
 
-  const beer = chosenBeer[0]
-  console.log(beer)
+  const beer = JSON.parse(data)
 
   return (
     <div className={styles.cover}>
@@ -46,22 +50,4 @@ export default function BeerId({ chosenBeer }) {
     </div>
   )
 
-}
-
-export async function getStaticProps({ params }) {
-  const id = params.beerId
-  const chosenBeer = await fetch(`https://api.punkapi.com/v2/beers/${id}`).then(res => res.json())
-  return {
-    props: {
-      chosenBeer
-    }
-  }
-}
-
-export const getStaticPaths = async () => {
-
-  return {
-      paths: [],
-      fallback: 'blocking'
-  }
 }

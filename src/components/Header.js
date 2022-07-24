@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import styles from "../styles/Header.module.scss";
+import styles from "../../styles/Header.module.scss";
 
 const Header = ({ onSearch, searchText }) => {
 

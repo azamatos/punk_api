@@ -16,7 +16,6 @@ export default function Home() {
 
   const getBeers = async (url) => {
     setLoading(true)
-    console.log(url)
     const result = await axios.get(url)
     setLoading(false)
     setBeers(result.data)
@@ -47,7 +46,7 @@ export default function Home() {
         beers={beers}
         loading={loading} />
       {loading ||
-        <Footer choosePage={choosePage} />
+        <Footer choosePage={choosePage} beers={beers} />
       }
     </>
   )

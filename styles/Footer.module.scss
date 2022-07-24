@@ -1,6 +1,11 @@
-.cover {
+@mixin flexing {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  @include flexing();
   gap: 20px;
 
   .btn {
@@ -13,3 +18,8 @@
     border-radius: 10px;
   }
 }
+
+.notFound {
+  @include flexing()
+}
+
