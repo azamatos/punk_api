@@ -8,8 +8,9 @@ export default function BeerId({ props }) {
     query: { data },
   } = router
 
-  const beer = JSON.parse(data)
-
+  try {
+    const beer = JSON.parse(data)
+ 
   return (
     <div className={styles.cover}>
       <div className={styles.card}>
@@ -49,5 +50,8 @@ export default function BeerId({ props }) {
       </div>
     </div>
   )
+} catch(err) {
+  console.log(err)
+}
 
 }
