@@ -48,12 +48,20 @@ export default function BeerId({ chosenBeer }) {
 
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const id = params.beerId
   const chosenBeer = await fetch(`https://api.punkapi.com/v2/beers/${id}`).then(res => res.json())
   return {
     props: {
       chosenBeer
     }
+  }
+}
+
+export const getStaticPaths = async () => {
+
+  return {
+      paths: [],
+      fallback: 'blocking'
   }
 }
