@@ -7,7 +7,8 @@ const nextConfig = {
     path: '',
   },
   basePath: '/punk_api',
-  assetPrefix: '/punk_api'
+  assetPrefix: '/punk_api',
+  pageExtensions: ['js'],
 }
 
 module.exports = nextConfig

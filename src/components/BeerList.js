@@ -31,7 +31,6 @@ const Item = ({ beers, loading }) => {
                 query: { data },
               }}
               key={index}
-
             >
               <div className={styles.card} >
                 <div className={styles.cardImage}>
